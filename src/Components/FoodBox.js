@@ -1,14 +1,9 @@
-import { Card, Col, Button } from 'antd';
+import { Button, Card, Col } from 'antd';
 
-// Iteration 2
-function FoodBox(food) {
+function FoodBox({food}) {
   return (
     <Col>
-      <Card
-        title={food.name}
-        style={{ width: 230, height: 300, margin: 10 }}
-      >
-        {console.log(food)}
+      <Card title={food.name} style={{ width: 230, height: 300, margin: 10 }}>
         <img src={food.image} height={60} alt={food.name} />
         <p>Calories: {food.calories}</p>
         <p>Servings: {food.servings}</p>

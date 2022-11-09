@@ -1,18 +1,18 @@
 import './App.css';
-import FoodBox from './Components/FoodBox';
+import FoodList from './Components/FoodList';
+import { Button } from 'antd';
+import AddFoodForm from './Components/AddFoodForm';
+
 
 function App() {
   // const [allFoods, setAllFoods] = useState(foods)
 
   return (
     <div className="App">
-      <FoodBox
-          name= 'Orange'
-          calories= '85'
-          image= 'https://i.imgur.com/abKGOcv.jpg'
-          servings= '1'
-        
-      />
+      <AddFoodForm />
+      <Button> Hide Form / Add New Food </Button>
+      {/* Display Search component here */}
+      <FoodList />
     </div>
   );
 }
