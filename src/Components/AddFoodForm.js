@@ -1,26 +1,39 @@
-import { Divider, Input } from 'antd';
+import React, { useState } from 'react';
+import { Form, Input, Button, Divider, InputNumber } from 'antd';
 
-// Iteration 4
-function AddFoodForm(props) {
+const AddFoodForm = () => {
   return (
-    <form>
-      <Divider>Add Food Entry</Divider>
+    <div>
+      <Divider>Add Food Form</Divider>
+      <Form
+        labelCol={{
+          span: 4,
+        }}
+        wrapperCol={{
+          span: 14,
+        }}
+        layout="horizontal"
+      >
+        <Form.Item label="Name">
+          <Input />
+        </Form.Item>
 
-      <label>Name</label>
-      <Input value={undefined} type="text" onChange={() => {}} />
+        <Form.Item label="Image">
+          <Input />
+        </Form.Item>
 
-      <label>Image</label>
-      <Input value={undefined} type="text" onChange={() => {}} />
+        <Form.Item label="Calories">
+          <Input />
+        </Form.Item>
 
-      <label>Calories</label>
-      <Input value={undefined} type="text" onChange={() => {}} />
-
-      <label>Servings</label>
-      <Input value={undefined} type="text" onChange={() => {}} />
-
-      <button type="submit">Create</button>
-    </form>
+        <Form.Item label="Servings">
+          <InputNumber />
+        </Form.Item>
+        <Form.Item>
+          <Button>Submit</Button>
+        </Form.Item>
+      </Form>
+    </div>
   );
-}
-
-export default AddFoodForm;
+};
+export default () => <AddFoodForm />;
