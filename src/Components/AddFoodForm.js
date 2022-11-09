@@ -1,7 +1,30 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Divider, InputNumber } from 'antd';
 
-const AddFoodForm = () => {
+function AddFoodForm({ foods, setFoods }) {
+  const [form, setForm] = useState({
+    name: '',
+    image: '',
+    calories: '',
+    servings: '',
+  });
+
+  function handleChange(e) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setFoods([...foods, form]);
+
+    setForm({
+      name: '',
+      image: '',
+      calories: '',
+      servings: '',
+    });
+  }
+
   return (
     <div>
       <Divider>Add Food Form</Divider>
@@ -15,25 +38,33 @@ const AddFoodForm = () => {
         layout="horizontal"
       >
         <Form.Item label="Name">
-          <Input />
+          <Input value={form.name} name="name" onChange={handleChange} />
         </Form.Item>
 
         <Form.Item label="Image">
-          <Input />
+          <Input value={form.image} name="image" onChange={handleChange} />
         </Form.Item>
 
         <Form.Item label="Calories">
-          <Input />
+          <Input
+            value={form.calories}
+            name="calories"
+            onChange={handleChange}
+          />
         </Form.Item>
 
         <Form.Item label="Servings">
-          <InputNumber />
+          <InputNumber
+            value={form.servings}
+            name="servings"
+            onChange={handleChange}
+          />
         </Form.Item>
         <Form.Item>
-          <Button>Submit</Button>
+          <Button onClick={handleSubmit}>Submit</Button>
         </Form.Item>
       </Form>
     </div>
   );
-};
+}
 export default () => <AddFoodForm />;
