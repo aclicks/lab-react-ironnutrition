@@ -5,8 +5,8 @@ function AddFoodForm({ allFoods, setAllFoods }) {
   const [form, setForm] = useState({
     name: '',
     image: '',
-    calories: '',
-    servings: '',
+    calories: 0,
+    servings: 0,
   });
 
   function handleChange(e) {
@@ -20,8 +20,8 @@ function AddFoodForm({ allFoods, setAllFoods }) {
     setForm({
       name: '',
       image: '',
-      calories: '',
-      servings: '',
+      calories: 0,
+      servings: 0,
     });
   }
 
@@ -29,24 +29,24 @@ function AddFoodForm({ allFoods, setAllFoods }) {
     <div>
       <Divider>Add Food Form</Divider>
       <Form
-        labelCol={{
-          span: 4,
-        }}
-        wrapperCol={{
-          span: 14,
-        }}
-        layout="horizontal"
+        // labelCol={{
+        //   span: 4,
+        // }}
+        // wrapperCol={{
+        //   span: 14,
+        // }}
+        // layout="horizontal"
       >
         <Form.Item label="Name">
-          <Input value={form.name} name="name" onChange={handleChange} />
+          <Input type="text" value={form.name} name="name" onChange={handleChange} />
         </Form.Item>
 
         <Form.Item label="Image">
-          <Input value={form.image} name="image" onChange={handleChange} />
+          <Input type="text" value={form.image} name="image" onChange={handleChange} />
         </Form.Item>
 
         <Form.Item label="Calories">
-          <Input
+          <Input type="number"
             value={form.calories}
             name="calories"
             onChange={handleChange}
@@ -54,7 +54,7 @@ function AddFoodForm({ allFoods, setAllFoods }) {
         </Form.Item>
 
         <Form.Item label="Servings">
-          <Input
+          <Input type="number"
             value={form.servings}
             name="servings"
             onChange={handleChange}

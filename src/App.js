@@ -4,21 +4,18 @@ import { Button, Input, Divider } from 'antd';
 import AddFoodForm from './Components/AddFoodForm';
 import list from './foods.json';
 import { useState } from 'react';
+import SearchBar from './Components/SearchBar'
 
 function App() {
   const [allFoods, setAllFoods] = useState(list);
   const [search, setSearch] = useState('');
 
-  function handleChange(e) {
-    setSearch(e.target.value);
-  }
+  
 
   return (
     <div className="App">
-      <Divider>Search Bar</Divider>
-      <label>Search</label>
-      <Input type="type" value={search} onChange={handleChange} />
-
+      
+      <SearchBar search={search} setSearch={setSearch} />
       <AddFoodForm allFoods={allFoods} setAllFoods={setAllFoods} />
       <Button> Hide Form / Add New Food </Button>
       {/* Display Search component here */}
