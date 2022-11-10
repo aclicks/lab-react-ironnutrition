@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Divider, InputNumber } from 'antd';
+import { Form, Input, Button, Divider } from 'antd';
 
-function AddFoodForm({ foods, setFoods }) {
+function AddFoodForm({ allFoods, setAllFoods }) {
   const [form, setForm] = useState({
     name: '',
     image: '',
@@ -15,7 +15,7 @@ function AddFoodForm({ foods, setFoods }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setFoods([...foods, form]);
+    setAllFoods([...allFoods, form]);
 
     setForm({
       name: '',
@@ -67,4 +67,4 @@ function AddFoodForm({ foods, setFoods }) {
     </div>
   );
 }
-export default () => <AddFoodForm />;
+export default AddFoodForm;
