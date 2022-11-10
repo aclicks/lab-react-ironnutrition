@@ -54,7 +54,7 @@ function AddFoodForm({ foods, setFoods }) {
         </Form.Item>
 
         <Form.Item label="Servings">
-          <InputNumber
+          <Input
             value={form.servings}
             name="servings"
             onChange={handleChange}

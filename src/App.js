@@ -15,7 +15,7 @@ function App() {
       <AddFoodForm foods={foods} setFoods={setFoods}/>
       <Button> Hide Form / Add New Food </Button>
       {/* Display Search component here */}
-      <FoodList foods={foods}/>
+      <FoodList foods={foods} setFoods={setFoods}/>
     </div>
   );
 }
